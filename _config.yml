@@ -1,0 +1,9 @@
+themeurl: /theme
+logourl: /assets/logo.png
+iconurl: /icon.png 
+repositoryurl: https://github.com/uwplse/bagpipe
+
+excerpt_separator: <!--more-->
+layouts: ./theme/_layouts
+markdown: kramdown
+highlighter: pygments
