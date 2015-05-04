@@ -18,7 +18,7 @@ Bagpipe enables an ISP to express its BGP policy in a domain-specific specificat
 
 ### Source
 
-
+Bagpipe will be made open-source upon acceptance of the paper.
 
 ### People
 
