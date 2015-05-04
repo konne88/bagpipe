@@ -1,9 +1,9 @@
+baseurl:  /bagpipe
 themeurl: /bagpipe/theme
-logourl: /bagpipe/assets/logo.png
-iconurl: /bagpipe/icon.png 
+logourl:  /bagpipe/assets/logo.png
+iconurl:  /bagpipe/icon.png
 repositoryurl: https://github.com/uwplse/bagpipe
 
-excerpt_separator: <!--more-->
 layouts: ./theme/_layouts
 markdown: kramdown
 highlighter: pygments
