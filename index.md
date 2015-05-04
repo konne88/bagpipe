@@ -22,7 +22,7 @@ Bagpipe will be made open-source upon acceptance of the paper.
 
 ### People
 
-If you have any question, want to be kept up-to date, or just want to say hi, email us at weitzkon at cs.uw.edu.
+If you have any question, want to be kept up-to date, or just want to say hi, email us at weitzkon at cs dot uw dot edu.
 
 <a class="person" href="http://konne.me">
   <span class="name">Konstantin Weitz</span><br/>
