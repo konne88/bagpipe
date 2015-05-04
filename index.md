@@ -2,7 +2,7 @@
 content_type: md
 permalink: /
 layout: main
-header_style: height:55px;
+header_style: height:60px;
 click: scrollTo(0)
 title: "Bagpipe: BGP Policy Verification"
 ---
