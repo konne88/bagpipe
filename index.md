@@ -19,10 +19,11 @@ Bagpipe enables an ISP to express its BGP policy in a domain-specific specificat
 ### Source
 
 
+
 ### People
 
-<a class="person" href="konne.me">
-  <div class="name">Konstantin Weitz</div>
+<a class="person" href="http://konne.me">
+  <span class="name">Konstantin Weitz</span>
   <img class="profile" src="http://www.konne.me/assets/profile.png"/>
 </a>
 
