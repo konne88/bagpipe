@@ -7,7 +7,7 @@ click: scrollTo(0)
 title: "Bagpipe: BGP Policy Verification"
 ---
 
-<img src="/bagpipe/assets/logo-large.png" style="float:left">
+<img src="/bagpipe/assets/logo-large.png" style="float:left; margin:20px">
 
 Bagpipe
 =======
