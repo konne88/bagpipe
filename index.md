@@ -22,11 +22,7 @@ Bagpipe will be made open-source upon acceptance of the paper.
 
 ### People
 
-If you have any question, want to be kept up-to date, or just want to say hi, email us at weitzkon@cs.uw.edu.
-
-would like to let us know a
-You can read us via email. 
-The Verdi developers can be reached via email. Feel free to email if you're using Verdi, thinking about using Verdi, or have questions. Verdi is developed in the University of Washington Programming Languages and Software Engineering group, by
+If you have any question, want to be kept up-to date, or just want to say hi, email us at weitzkon at cs.uw.edu.
 
 <a class="person" href="http://konne.me">
   <span class="name">Konstantin Weitz</span><br/>
