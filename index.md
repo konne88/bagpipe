@@ -1,6 +1,6 @@
 ---
 content_type: md
-permalink: /bagpipe
+permalink: /
 layout: main
 header_style: height:260px;
 click: scrollTo(0)
