@@ -2,7 +2,7 @@ baseurl:  /bagpipe
 themeurl: /bagpipe/theme
 logourl:  /bagpipe/assets/logo.png
 iconurl:  /bagpipe/icon.png
-repositoryurl: https://github.com/uwplse/bagpipe
+repositoryurl: https://github.com/konne88/bagpipe
 
 layouts: ./theme/_layouts
 markdown: kramdown
