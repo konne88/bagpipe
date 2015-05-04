@@ -28,27 +28,27 @@ Bagpipe enables an ISP to express its BGP policy in a domain-specific specificat
 </a>
 
 <a class="person" href="http://www.dougwoos.com/">
-  <div class="name">Doug Woos</div>
+  <span class="name">Doug Woos</span>
   <img class="profile" src="http://www.dougwoos.com/assets/me.jpeg"/>
 </a>
 
 <a class="person" href="http://homes.cs.washington.edu/~emina/">
-  <div class="name">Emina Torlak</div>
+  <span class="name">Emina Torlak</span>
   <img class="profile" src="http://homes.cs.washington.edu/~emina/images/emina.jpg"/>
 </a>
 
 <a class="person" href="https://homes.cs.washington.edu/~mernst/">
-  <div class="name">Michael D. Ernst</div>
+  <span class="name">Michael D. Ernst</span>
   <img class="profile" src="http://www.cs.washington.edu/sites/default/files/mernst.jpg"/>
 </a>
 
 <a class="person" href="http://www.cs.washington.edu/people/faculty/arvind">
-  <div class="name">Arvind Krishnamurthy</div>
+  <span class="name">Arvind Krishnamurthy</span>
   <img class="profile" src="/bagpipe/assets/arvind.jpg"/>
 </a>
 
 <a class="person" href="https://homes.cs.washington.edu/~ztatlock/">
-  <div class="name">Zachary Tatlock</div>
+  <span class="name">Zachary Tatlock</span>
   <img class="profile" src="/bagpipe/assets/ztatlock.png"/>
 </a>
 
