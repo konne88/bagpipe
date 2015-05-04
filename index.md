@@ -34,7 +34,7 @@ Bagpipe will be made open-source upon acceptance of the paper.
   <img class="profile" src="http://www.dougwoos.com/assets/me.jpeg"/>
 </a>
 
-<a class="person" href="http://homes.cs.washington.edu/~emina/" style="clear: both">
+<a class="person" href="http://homes.cs.washington.edu/~emina/">
   <span class="name">Emina Torlak</span><br/>
   <img class="profile" src="http://homes.cs.washington.edu/~emina/images/emina.jpg"/>
 </a>
