@@ -22,7 +22,6 @@ Bagpipe enables an ISP to express its BGP policy in a domain-specific specificat
 
 ### People
 
-<div>
 <a class="person" href="http://konne.me">
   <span class="name">Konstantin Weitz</span><br/>
   <img class="profile" src="http://www.konne.me/assets/profile.png"/>
@@ -32,10 +31,8 @@ Bagpipe enables an ISP to express its BGP policy in a domain-specific specificat
   <span class="name">Doug Woos</span><br/>
   <img class="profile" src="http://www.dougwoos.com/assets/me.jpeg"/>
 </a>
-</div>
 
-<div>
-<a class="person" href="http://homes.cs.washington.edu/~emina/">
+<a class="person" href="http://homes.cs.washington.edu/~emina/" style="clear: both">
   <span class="name">Emina Torlak</span><br/>
   <img class="profile" src="http://homes.cs.washington.edu/~emina/images/emina.jpg"/>
 </a>
@@ -54,7 +51,6 @@ Bagpipe enables an ISP to express its BGP policy in a domain-specific specificat
   <span class="name">Zachary Tatlock</span><br/>
   <img class="profile" src="/bagpipe/assets/ztatlock.png"/>
 </a>
-</div>
 
 [SN]: https://www.selfnet.de/en
 [I2]: http://www.internet2.edu/
