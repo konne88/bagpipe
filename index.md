@@ -1,16 +1,9 @@
 ---
 content_type: md
-permalink: /
+permalink: /bagpipe
 layout: main
 header_style: height:260px;
 click: scrollTo(0)
-topnav:
-- text: Projects
-  url: javascript:scrollToHeading('open-source-projects')
-- text: Publications
-  url: javascript:scrollToHeading('publications')
-- text: Posts
-  url: javascript:scrollToHeading('posts')
 title: Bagpipe: BGP Policy Verification
 info: <div id="description" class="description">
         Bagpipe verifies BGP policies. 
