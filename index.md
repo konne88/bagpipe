@@ -32,6 +32,8 @@ Bagpipe enables an ISP to express its BGP policy in a domain-specific specificat
   <img class="profile" src="http://www.dougwoos.com/assets/me.jpeg"/>
 </a>
 
+<br/>
+
 <a class="person" href="http://homes.cs.washington.edu/~emina/">
   <span class="name">Emina Torlak</span><br/>
   <img class="profile" src="http://homes.cs.washington.edu/~emina/images/emina.jpg"/>
