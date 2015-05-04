@@ -1,6 +1,6 @@
-themeurl: /theme
-logourl: /assets/logo.png
-iconurl: /icon.png 
+themeurl: /bagpipe/theme
+logourl: /bagpipe/assets/logo.png
+iconurl: /bagpipe/icon.png 
 repositoryurl: https://github.com/uwplse/bagpipe
 
 excerpt_separator: <!--more-->
