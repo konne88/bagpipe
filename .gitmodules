@@ -1,3 +1,3 @@
 [submodule "theme"]
 	path = theme
-	url = git@github.com:konne88/jekyll-theme-light.git
+    url = https://github.com/konne88/jekyll-theme-light.git
