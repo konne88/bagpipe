@@ -4,10 +4,8 @@ permalink: /bagpipe
 layout: main
 header_style: height:260px;
 click: scrollTo(0)
-title: Bagpipe: BGP Policy Verification
-info: <div id="description" class="description">
-        Bagpipe verifies BGP policies. 
-      </div>
+title: "Bagpipe: BGP Policy Verification"
+info: Bagpipe verifies BGP policies. 
 ---
 
 The CSS layout is weird.
