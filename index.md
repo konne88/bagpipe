@@ -22,6 +22,8 @@ Bagpipe will be made open-source upon acceptance of the paper.
 
 ### People
 
+<div style="margin-left:auto; margin-right:auto">
+
 <a class="person" href="http://konne.me">
   <span class="name">Konstantin Weitz</span><br/>
   <img class="profile" src="http://www.konne.me/assets/profile.png"/>
@@ -51,6 +53,8 @@ Bagpipe will be made open-source upon acceptance of the paper.
   <span class="name">Zachary Tatlock</span><br/>
   <img class="profile" src="/bagpipe/assets/ztatlock.png"/>
 </a>
+
+</div>
 
 [SN]: https://www.selfnet.de/en
 [I2]: http://www.internet2.edu/
