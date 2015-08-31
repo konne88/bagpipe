@@ -27,7 +27,7 @@ This section shows how to run Bagpipe to verify that the [Internet2 AS][I2] neve
 
     cat example.tar | docker run -i konne/bagpipe verify atla
 
-The above command assumes an installation of docker. Docker installation instructions are provided [here][DOCKER]. I promise installing and understanding docker doesn't take long, and it will be beneficial even if you won't end up using Bagpipe.
+The above command assumes an installation of docker. Docker installation instructions are provided [here][DOCKER]. You may have to run `docker` as root. I promise installing and understanding docker doesn't take long, and it will be beneficial even if you won't end up using Bagpipe.
 
 Bagpipe first downloads some resources (this takes a while for the first time you start Bagpipe), and then verifies the "no martian" policy for the Atlanta `atla` router of Internet2 (replace `atla` with `all` to verify the policy for all routers of Internet2). The output of Bagpipe should contain:
 
@@ -107,7 +107,7 @@ Running Bagpipe on your BGP router configurations has several benefits:
 
 
 - Bagpipe's policies are _concise_ and _centralized_. For example, by using Bagpipe on Internet2 an administrator only has to manually verify the `no-martian` policy instead of having to manually verify that the `SANITY-IN` rule in every router configuration is correct, and that the rule is actually used by every neighbor of every router.
-- Bagpipe's policies are checked statically and can thus improve _performance_. For example, by using Bagpipe on Internet2 an administrator can remove some unnecessary `SANITY-IN` checks for those neighbors that block "martian" prefixes with other rules, and can thus improve the routers' runtime performance.
+- Bagpipe's policies are checked statically and can thus improve _performance_. For example, by using Bagpipe on Internet2 an administrator can remove some unnecessary `SANITY-IN` checks for those neighbors that block "martian" prefixes with other rules, and can thus improve the routers' run-time performance.
 - Bagpipe's policies _compose_ nicely. For example, by using Bagpipe an administrator can verify multiple policies independently and knows that all of them hold instead of having to reason about the interference between multiple rules due to execution order (i.e. a rule executed first might permanently accept routing informations that should be discarded by a later rule).
 
 This is post only covers simple policies for Local RIBs. Bagpipe also supports more complex policies for Adjacent RIBs In and Out. By using these advanced features, policies such as the Gao Rexford Model can be verified. If you want to learn more about this, run into any problems, have feedback, or just want to say hi, please contact us at weitzkon at cs dot uw dot edu!
