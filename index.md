@@ -28,6 +28,8 @@ Bagpipe enables ISP administrators to express BGP policies in a domain-specific 
 
 We have evaluated Bagpipe on [Internet2][I2] and [Selfnet][SN], two ISPs with a combined total of over [100,000 lines of router configuration][RC]. We identified and expressed policies for these ISPs, and found 19 inconsistencies between the policies and the router configurations without issuing any false positives.
 
+Bagpipe is open-source and hosted on [GitHub][GH].
+
 ### People
 
 If you have any question, want to be kept up-to date, or just want to say hi, email us at weitzkon at cs dot uw dot edu.
@@ -62,6 +64,7 @@ If you have any question, want to be kept up-to date, or just want to say hi, em
   <img class="profile" src="/bagpipe/assets/ztatlock.png"/>
 </a>
 
+[GH]: https://github.com/konne88/bagpipe
 [SN]: https://www.selfnet.de/en
 [I2]: http://www.internet2.edu/
 [RC]: http://vn.grnoc.iu.edu/Internet2/configs/configs.html
