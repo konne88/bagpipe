@@ -2,23 +2,31 @@
 content_type: md
 permalink: /
 layout: main
-header_style: height:60px;
+header_style: height:240px;
 click: scrollTo(0)
-title: "Bagpipe: BGP Policy Verification"
+topnav:
+- text: Get Started
+  url: started.html
+- text: Motivation
+  url: javascript:scrollToHeading('motivation')
+- text: People
+  url: javascript:scrollToHeading('people')
+title: Bagpipe
+info: <div id="description" class="description">
+        Bagpipe enables Autonomous System (AS) administrators to verify policies for their BGP router configurations.
+      </div>
+      <div class="buttons">
+        <button type="button" class="btn btn-default" onclick="download('started.html')">Get Started with Bagpipe</button>
+      </div>
 ---
 
-<img src="/bagpipe/assets/logo-large.png" style="float:left; margin:20px">
-
-Bagpipe: BGP Policy Verification
-================================
+### Motivation
 
 Internet Service Providers (ISPs) rely on the Border Gateway Protocol (BGP) to exchange routing information, which is necessary to deliver traffic over the Internet. The BGP behavior of an ISP's routers is determined by their configurations. Router misconfigurations have caused major monetary loss, performance degradation, service outages, and security violations. Some of the effects of misconfiguration are highly visible, such as the worldwide extended downtime of [YouTube in 2009][BGP-YT] and route hijacks by [China Telecom in 2010][BGP-CT10] and [2014][BGP-CT14]. Less visible is the high cost of developing and maintaining correct configurations, which requires checking invariants across hundreds of thousands of lines of configuration for all of an ISP's routers. 
 
-Bagpipe enables an ISP to express its BGP policy in a domain-specific specification language and verify that its router configurations implement this policy. We evaluated Bagpipe on [Internet2][I2] and [Selfnet][SN], two ISPs with a combined total of over [100,000 lines of router configuration][RC]. We identified and expressed policies for these ISPs, and found 19 inconsistencies between the policies and the router configurations without issuing any false positives.
+Bagpipe enables ISP administrators to express BGP policies in a domain-specific specification language and verify that the ISP's router configurations implement these policies. 
 
-### Source
-
-Bagpipe will be made open-source upon acceptance of the paper.
+We have evaluated Bagpipe on [Internet2][I2] and [Selfnet][SN], two ISPs with a combined total of over [100,000 lines of router configuration][RC]. We identified and expressed policies for these ISPs, and found 19 inconsistencies between the policies and the router configurations without issuing any false positives.
 
 ### People
 
