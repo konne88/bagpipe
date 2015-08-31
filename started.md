@@ -23,13 +23,13 @@ Bagpipe enables Autonomous System (AS) administrators to verify policies for the
 
 ### Run Bagpipe
 
-This section shows how to run Bagpipe to verify that the [Internet2 AS][I2] never uses "martian" routing information --- routing information for invalid prefixes such as localhost. To verify that the "no martian" policy holds for Internet2, first download the file [example.tar][EX] that contains the policy and Internet2's configurations, and and then pass that file to Bagpipe:
+This section shows how to run Bagpipe to verify that the [Internet2 AS][I2] never uses "martian" routing information --- routing information for invalid prefixes such as localhost. To verify that the "no-martian" policy holds for Internet2, first download the file [example.tar][EX] that contains the policy and Internet2's configurations, and and then pass that file to Bagpipe:
 
     cat example.tar | docker run -i konne/bagpipe verify atla
 
 The above command assumes an installation of docker. Docker installation instructions are provided [here][DOCKER]. You may have to run `docker` as root. I promise installing and understanding docker doesn't take long, and it will be beneficial even if you won't end up using Bagpipe.
 
-Bagpipe first downloads some resources (this takes a while for the first time you start Bagpipe), and then verifies the "no martian" policy for the Atlanta `atla` router of Internet2 (replace `atla` with `all` to verify the policy for all routers of Internet2). The output of Bagpipe should contain:
+Bagpipe first downloads some resources (this takes a while for the first time you start Bagpipe), and then verifies the "no-martian" policy for the Atlanta `atla` router of Internet2 (replace `atla` with `all` to verify the policy for all routers of Internet2). The output of Bagpipe should contain:
 
     total number of checks 39
     check 0
@@ -48,7 +48,7 @@ The "no martian" policy from above is defined as follows:
         false
         true))
 
-A policy is a function written in [Racket][RT] that takes a portion of router state and returns `true` if the state is acceptable and `false` otherwise. The router state passed to the no `no-martian` policy is a router's Local RIB, which assigns routing information to some prefixes. Concretely, the `no-martian` policy takes the potential routing information `al` assigned to prefix `p` in the Local RIB of router `r`, and returns `false` if `p` is a martian `martian?` and the routing information for `p` is actually available `available?`.
+A policy is a function written in [Racket][RT] that takes a portion of router state and returns `true` if the state is acceptable and `false` otherwise. The router state passed to the `no-martian` policy is a router's Local RIB, which assigns routing information to some prefixes. Concretely, the `no-martian` policy takes the potential routing information `al` assigned to prefix `p` in the Local RIB of router `r`, and returns `false` if `p` is a martian `martian?` and the routing information for `p` is actually available `available?`.
 
 We say that a policy _holds_ if it is `true` for every reachable router state. Bagpipe is an algorithm that efficiently checks whether a policy holds.
 
