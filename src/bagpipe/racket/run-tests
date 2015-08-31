@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for f in $BAGPIPE/src/bagpipe/racket/test/*.rkt
+do
+  echo
+  echo $f
+  time racket $f
+done

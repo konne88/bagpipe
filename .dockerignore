@@ -1,0 +1,4 @@
+.git
+src/bagpipe/hs/cabal.sandbox.config
+src/bagpipe/hs/.cabal-sandbox
+src/bagpipe/hs/dist

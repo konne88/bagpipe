@@ -1,0 +1,12 @@
+.dist-buildwrapper
+.settings
+.project
+*~
+dist/
+.DS_Store
+#*#
+compiled
+.cabal-sandbox/
+src/bagpipe/hs/cabal.sandbox.config
+src/bagpipe/coq/build/
+src/bagpipe/racket/main/bgpv.rkt

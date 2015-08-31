@@ -1,0 +1,53 @@
+#!/bin/bash
+
+echo "====== TO""DOs ======"
+grep -R "TO""DO" .
+
+echo
+echo "====== Missing BGP Commands ======"
+racket main/bagpipe.rkt missing bgp $BAGPIPE/configs/internet2/* | sort | uniq | sed -E '/^\((bfd-liveness-detection|description|family|graceful-restart|inactive:|hold-time|log-updown|multihop|tcp-mss|traceoptions|cluster|peer-as|metric-out|local-address|multipath|passive|neighbor [0-9a-f]+:[^ ]+)[) ]/d'
+
+# NOTE commands that i'm not planning to support for the OOPSLA paper:
+# bfd-liveness-detection
+# description               a documentation string for the neighbor
+# family                     
+# graceful-restart
+# inactive:                 disabled
+# hold-time
+# log-updown                enable logging
+# multipath                 configure multipath, don't fully understand it
+#                           http://www.juniper.net/documentation/en_US/junos12.2/topics/topic-map/bgp-multipath.html 
+# multihop                  send packets over multiple routers between bgp routers
+#                           https://www.juniper.net/techpubs/en_US/junos11.4/topics/concept/bgp-multihop-understanding.html
+# passive                   configures the details of when bgp sessions are opened
+#                           http://www.juniper.net/documentation/en_US/junos14.2/topics/reference/configuration-statement/passive-edit-protocols-bgp.html
+# tcp-mss
+# traceoptions
+# peer-as                   defines the neighbor's AS number
+# metric-out                configure MED
+# local-address             doesn't seem interesting, not sure what this does, but below is the documentation:
+#                           https://www.juniper.net/documentation/en_US/junos13.1/topics/reference/configuration-statement/local-address-edit-protocols-bgp.html
+# cluster                   configures route reflectors
+# neighbor [0-9a-f]+:[^ ]+  ipv6 neighbors
+
+
+echo
+echo "====== Missing Policy Commands ======"
+racket main/bagpipe.rkt missing policy $BAGPIPE/configs/internet2/* | sort | uniq | sed -E '/^\((inactive:|interface|load-balance|rib|family|install-nexthop|next-hop|metric|origin|protocol|tag|route-filter [0-9a-f]+:[^ ]+)[) ]/d'
+
+# inactive:                      disabled
+# interface
+# load-balance 
+# rib                            move annoucement into a certain routing table
+# family
+# next-hop                       change the next-hop somehow
+# install-nexthop                change the next-hop somehow
+#                                http://www.juniper.net/techpubs/en_US/junos14.2/topics/example/policy-lsp-forwarding-next-hop-assigned-to-different-destination-prefixes.html
+# metric                         configure MED
+# route-filter [0-9a-f]+:[^ ]+   ipv6 filters
+# protocol                       match on the protocol being used, static might be interesting here
+# origin                         
+# tag                            
+
+
+
