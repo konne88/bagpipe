@@ -48,7 +48,7 @@ The "no martian" policy from above is defined as follows:
         false
         true))
 
-A policy is a function that takes a portion of router state and returns `true` if the state is acceptable and `false` otherwise. The router state passed to the no `no-martian` policy is a router's local RIB, which assigns routing information to some prefixes. Concretely, the `no-martian` policy takes the potential routing information `al` assigned to prefix `p` in the local RIB of router `r`, and returns `false` if `p` is a martian `martian?` and the routing information for `p` is actually available `available?`.
+A policy is a function written in [Racket][RT] that takes a portion of router state and returns `true` if the state is acceptable and `false` otherwise. The router state passed to the no `no-martian` policy is a router's Local RIB, which assigns routing information to some prefixes. Concretely, the `no-martian` policy takes the potential routing information `al` assigned to prefix `p` in the Local RIB of router `r`, and returns `false` if `p` is a martian `martian?` and the routing information for `p` is actually available `available?`.
 
 We say that a policy _holds_ if it is `true` for every reachable router state. Bagpipe is an algorithm that efficiently checks whether a policy holds.
 
@@ -75,20 +75,20 @@ The output of Bagpipe should look like the following:
     a0 = {pref: 0, coms: [INTERNET2-INFINERA], path: []}
     al = {pref: 200, coms: [INTERNET2-INFINERA], path: []}
 
-Bagpipe prints a counter example for which the policy does not hold (your counter example may be different). Remember that such a counter example is some reachable router state for which the `no-martian` policy returns `false`.
+Bagpipe prints a counter example for which the policy does not hold (your counter example may be different). The counter example describes the state of some router's Local RIB. Concretely, the counter example consists of the routing information `al` assigned to prefix `244.9.3.0/16` in the Local RIB of router `64.57.28.243`. `al`'s LOCAL_PREF attribute is set to `200`, the COMMUNITIES attribute has the `INTERNET2-INFINERA` community set, and the AS_PATH is empty. 
 
-The counter example is the routing information `al` assigned to prefix `244.9.3.0/16` in the local RIB of router `64.57.28.243`. `al`'s LOCAL_PREF attribute is set to `0`, the COMMUNITIES attribute has the `INTERNET2-INFINERA` community set, and the AS_PATH is empty. For this to be a counter example, it must not be accepted by the `no-martian` policy, and it must be reachable.
+Let us check that this is a real counter example by showing that it is not accepted by the `no-martian` policy, and that it is reachable.
 
-- The counter example is indeed not accepted by the `no-martian` policy, because `p` is reserved as part of the Class E address space and thus "martian" (see [RFC 3330][RFC3330]). Therefore, `(no-martian (ip 64 57 28 243) (cidr (ip 244 9 3 0) 16) al)` evaluates to `false`.
+- The counter example is indeed not accepted by the `no-martian` policy, because `244.9.3.0/16` is reserved as part of the Class E address space and thus "martian" (see [RFC 3330][RFC3330]). Therefore, `(no-martian (ip 64 57 28 243) (cidr (ip 244 9 3 0) 16) al)` evaluates to `false`.
 
 - The counter example is also reachable, because Internet2's neighbor `149.165.254.20` can send an update message containing the routing information `a0` which is imported by `64.57.28.243` as `al`.
 
-Bagpipe is configured with a _setup file_. In the example above, this was the [example.tar][EX] file. A setup file is a tar archive that contains a [Racket][RT] program called `setup.rkt`. Bagpipe runs two functions in `setup.rkt`:
+Bagpipe is configured with a _setup file_. In the example above, this was the [example.tar][EX] file. A setup file is a tar archive that contains a Racket program called `setup.rkt`. Bagpipe runs two functions in `setup.rkt`:
 
 - `policy` provides the policy to be verified
 - `as` loads the AS's router configurations
 
-In the examples above, these two functions are:
+In the example above, these two functions are defined as:
 
     (define (policy args)
       no-martian)
@@ -99,17 +99,18 @@ In the examples above, these two functions are:
         [(equal? (first args) "atla") (load-atla)]
         [(equal? (first args) "atla-no-sanity") (load-atla-no-sanity)]))
 
-Bagpipe forwards its command-line arguments to both functions (in the examples above the command-line arguments are `atla` and `atla-no-sanity`). The `policy` function ignores the command-line arguments and returns the `no-martian` policy. The `as` function parses the command-line arguments and calls `load-as` on the appropriate router configurations.
+Bagpipe forwards its command-line arguments to both functions (in the examples above the command-line arguments are `atla` and `atla-no-sanity` respectively). The `policy` function ignores the command-line arguments and returns the `no-martian` policy. The `as` function parses the command-line arguments and loads the appropriate router configurations.
 
 ### Know the Benefits
 
 Running Bagpipe on your BGP router configurations has several benefits:
 
-- Bagpipe's policies are _concise_ and _centralized_. For example, by using Bagpipe an Internet2 administrator only has to manually verify the `no-martian` policy instead of having to manually verify that every duplicate of the `SANITY-IN` rule in every router configuration is correct and actually used by every neighbor of every router.
-- Bagpipe's policies are checked statically and can thus improve _performance_. For example, by using Bagpipe Internet2 can remove some unnecessary `SANITY-IN` checks for those neighbors that block "martian" prefixes with other rules.
-- Bagpipe's policies _compose_ nicely. If you check your configuration for multiple policies you know that all of them hold, if you add multiple rules to a neighbor they interfere according to the order of execution. For example, a rule executed first might accept routing informations that would be discarded by a later rule.
 
-This is post only covers simple policies for local RIBs. Bagpipe also supports more complex policies for adjacent RIBs in and out. By using these advanced features policies such as the Gao Rexford Model can be verified. If you want to learn more, run into any problems, or have feedback, please contact us!
+- Bagpipe's policies are _concise_ and _centralized_. For example, by using Bagpipe on Internet2 an administrator only has to manually verify the `no-martian` policy instead of having to manually verify that the `SANITY-IN` rule in every router configuration is correct, and that the rule is actually used by every neighbor of every router.
+- Bagpipe's policies are checked statically and can thus improve _performance_. For example, by using Bagpipe on Internet2 an administrator can remove some unnecessary `SANITY-IN` checks for those neighbors that block "martian" prefixes with other rules, and can thus improve the routers' runtime performance.
+- Bagpipe's policies _compose_ nicely. For example, by using Bagpipe an administrator can verify multiple policies independently and knows that all of them hold instead of having to reason about the interference between multiple rules due to execution order (i.e. a rule executed first might permanently accept routing informations that should be discarded by a later rule).
+
+This is post only covers simple policies for Local RIBs. Bagpipe also supports more complex policies for Adjacent RIBs In and Out. By using these advanced features, policies such as the Gao Rexford Model can be verified. If you want to learn more about this, run into any problems, have feedback, or just want to say hi, please contact us at weitzkon at cs dot uw dot edu!
 
 [RT]: http://racket-lang.org/
 [EX]: assets/example.tar
