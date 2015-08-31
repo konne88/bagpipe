@@ -1,1 +1,1 @@
-[see](http://konne.me/bagpipe)
+Visit the [Bagpipe website](http://konne.me/bagpipe) for help.
