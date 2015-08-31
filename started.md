@@ -2,9 +2,9 @@
 content_type: md
 permalink: /started.html
 layout: main
-header_style: height:60px;
+header_style: height:0px;
 click: download('/bagpipe/');
-title: "Getting Started with Bagpipe"
+title: Bagpipe
 topnav:
 - text: Run
   url: javascript:scrollToHeading('run-bagpipe')
