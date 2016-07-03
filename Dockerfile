@@ -27,10 +27,11 @@ RUN ./install.sh --in-place --create-links /usr --dest /usr/racket
 RUN rm install.sh
 
 # install rosette
-RUN git clone https://github.com/emina/rosette.git
-RUN cd rosette; raco link rosette
-RUN cd rosette; raco setup -l rosette
-RUN ln -s /usr/bin/z3 rosette/bin/
+RUN git clone https://github.com/emina/rosette.git && \
+    cd rosette; git checkout db80315cb37df8e32766f6436c9baad9544540a4 && \
+                raco link rosette && \
+                raco setup -l rosette && \
+                ln -s /usr/bin/z3 bin/
 
 # install some haskell packets that we think will be useful
 RUN cabal update; \
