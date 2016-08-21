@@ -30,6 +30,10 @@ We have evaluated Bagpipe on [Internet2][I2] and [Selfnet][SN], two ISPs with a 
 
 Bagpipe is open-source and hosted on [GitHub][GH].
 
+### Publications
+
+
+
 ### People
 
 If you have any question, want to be kept up-to date, or just want to say hi, email us at weitzkon at cs dot uw dot edu.
