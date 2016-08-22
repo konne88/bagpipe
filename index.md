@@ -32,7 +32,23 @@ Bagpipe is open-source and hosted on [GitHub][GH].
 
 ### Publications
 
+> "Formal Semantics & Verification for the Border Gateway Protocol" (Tech Report)
+   by Konstantin Weitz, Doug Woos, Arvind Krishnamurthy, Michael D. Ernst, and Zachary Tatlock.<br/>
+> Download: [PDF][SEMANTICS-REPORT-PDF].		
 
+> "Formal Semantics and Automated Verification for the Border Gateway Protocol"
+   by Konstantin Weitz, Doug Woos, Emina Torlak, Michael D. Ernst, Arvind Krishnamurthy, and Zachary Tatlock.
+   *In NetPL 2016.*<br/>
+> Download: [PDF][NETPL-PDF].
+
+> "Scalable Verification of Border Gateway Protocol Configurations with an SMT Solver"
+   by Konstantin Weitz, Doug Woos, Emina Torlak, Michael D. Ernst, Arvind Krishnamurthy, and Zachary Tatlock.
+   *In OOPSLA 2016.*<br/>
+> Download: [PDF][BAGPIPE-PDF].		
+
+[SEMANTICS-REPORT-PDF]: https://www.cs.washington.edu/public_files/grad/tech_reports/UW-CSE-16-08-01.pdf
+[NETPL-PDF]: http://conferences.sigcomm.org/sigcomm/2016/files/program/netpl/netpl16-final2.pdf
+[BAGPIPE-PDF]: http://www.konne.me/assets/bagpipe.pdf
 
 ### People
 
